@@ -181,7 +181,7 @@ function GamePageContent() {
     return (
       <div className="flex flex-col h-screen w-full bg-[#0f172a] items-center justify-center">
         <div className="text-4xl mb-4">🎮</div>
-        <p className="text-lg text-[#1a1a1a]">Loading game...</p>
+        <p className="text-lg text-white">Loading game...</p>
       </div>
     )
   }
@@ -192,7 +192,7 @@ function GamePageContent() {
   }
 
   return (
-    <div className="flex flex-col h-screen w-full overflow-hidden relative">
+    <div className="flex flex-col h-screen w-full overflow-hidden relative bg-[#0f172a]">
       {/* Animated background */}
       <AnimatedBackground variant="game" intensity="high" />
       
@@ -205,7 +205,7 @@ function GamePageContent() {
             key={score}
             initial={{ scale: 1.2, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="text-4xl font-black text-[#1a1a1a]"
+            className="text-4xl font-black text-white"
           >
             {score}
           </motion.div>
@@ -245,9 +245,9 @@ export default function GamePage() {
     return (
       <div className="flex flex-col h-screen w-full bg-[#0f172a] items-center justify-center">
         <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#35d07f] to-[#fbcc5c] flex items-center justify-center animate-pulse">
-          <span className="text-5xl font-bold text-[#1a1a1a]">🎨</span>
+          <span className="text-5xl font-bold text-white">🎨</span>
         </div>
-        <p className="mt-4 text-lg text-[#1a1a1a]">Loading...</p>
+        <p className="mt-4 text-lg text-white">Loading...</p>
       </div>
     )
   }

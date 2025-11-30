@@ -23,22 +23,22 @@ export default function AnimatedBackground({
   }, [])
 
   if (variant === "game") {
-    // Dynamic color-changing background for game page
+    // Dynamic color-changing background for game page - dark theme
     const hue1 = (Math.sin(time) * 30 + 150) % 360 // Green to cyan range
     const hue2 = (Math.sin(time * 0.7) * 30 + 50) % 360 // Yellow to orange range
     const hue3 = (Math.sin(time * 1.3) * 30 + 200) % 360 // Blue to purple range
 
     return (
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        {/* Animated gradient background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden bg-[#0f172a]">
+        {/* Animated gradient background - dark theme with colored overlays */}
         <motion.div
           className="absolute inset-0"
           animate={{
             background: [
-              `linear-gradient(135deg, hsl(${hue1}, 70%, 95%) 0%, hsl(${hue2}, 70%, 95%) 50%, hsl(${hue3}, 70%, 95%) 100%)`,
-              `linear-gradient(225deg, hsl(${hue2}, 70%, 95%) 0%, hsl(${hue3}, 70%, 95%) 50%, hsl(${hue1}, 70%, 95%) 100%)`,
-              `linear-gradient(315deg, hsl(${hue3}, 70%, 95%) 0%, hsl(${hue1}, 70%, 95%) 50%, hsl(${hue2}, 70%, 95%) 100%)`,
-              `linear-gradient(45deg, hsl(${hue1}, 70%, 95%) 0%, hsl(${hue2}, 70%, 95%) 50%, hsl(${hue3}, 70%, 95%) 100%)`,
+              `linear-gradient(135deg, hsl(${hue1}, 60%, 15%) 0%, hsl(${hue2}, 60%, 12%) 50%, hsl(${hue3}, 60%, 15%) 100%)`,
+              `linear-gradient(225deg, hsl(${hue2}, 60%, 12%) 0%, hsl(${hue3}, 60%, 15%) 50%, hsl(${hue1}, 60%, 15%) 100%)`,
+              `linear-gradient(315deg, hsl(${hue3}, 60%, 15%) 0%, hsl(${hue1}, 60%, 15%) 50%, hsl(${hue2}, 60%, 12%) 100%)`,
+              `linear-gradient(45deg, hsl(${hue1}, 60%, 15%) 0%, hsl(${hue2}, 60%, 12%) 50%, hsl(${hue3}, 60%, 15%) 100%)`,
             ],
           }}
           transition={{
@@ -62,7 +62,7 @@ export default function AnimatedBackground({
               style={{
                 width: `${size}px`,
                 height: `${size}px`,
-                background: `hsl(${hue}, 70%, 70%)`,
+                background: `hsl(${hue}, 60%, 25%)`,
                 left: `${x}%`,
                 top: `${y}%`,
               }}
@@ -107,9 +107,9 @@ export default function AnimatedBackground({
     )
   }
 
-  // Default: subtle pulsing background
+  // Default: subtle pulsing background - dark theme
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-white">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-[#0f172a]">
       <motion.div
         className="absolute inset-0"
         animate={{
