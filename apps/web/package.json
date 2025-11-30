@@ -5,6 +5,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "dev:minipay": "next dev",
+    "ngrok": "ngrok start --config=ngrok.yml minipay",
     "lint": "next lint",
     "start": "next start",
     "type-check": "tsc --noEmit"

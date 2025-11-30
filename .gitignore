@@ -98,3 +98,6 @@ Thumbs.db
 
 # Turbo
 .turbo
+
+# ngrok config (contains auth token)
+apps/web/ngrok.yml

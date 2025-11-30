@@ -445,6 +445,81 @@ See [DEPLOY.md](apps/contracts/DEPLOY.md) for detailed deployment instructions.
 
 ---
 
+## 📱 MiniPay Testing
+
+Test your app in the MiniPay environment using ngrok for local development.
+
+### Quick Start
+
+1. **Install ngrok** (if not already installed):
+   ```bash
+   # macOS
+   brew install ngrok/ngrok/ngrok
+   
+   # Or via npm
+   npm install -g ngrok
+   ```
+
+2. **Set up ngrok config**:
+   ```bash
+   cd apps/web
+   cp ngrok.yml.example ngrok.yml
+   # Edit ngrok.yml and add your auth token
+   ```
+
+3. **Start testing environment**:
+   ```bash
+   # Linux/macOS
+   ./scripts/start-minipay-test.sh
+   
+   # Windows PowerShell
+   .\scripts\start-minipay-test.ps1
+   ```
+
+4. **Enable Developer Mode in MiniPay**:
+   - Open MiniPay app
+   - Go to **Settings** → **About**
+   - Tap version number 7 times
+   - Go to **Settings** → **Developer Settings**
+   - Enable **Developer Mode** and **Use Testnet**
+
+5. **Load your app**:
+   - In Developer Settings, tap **Load test page**
+   - Enter the ngrok URL shown in terminal
+   - Tap **Load** to launch
+
+### Manual Setup
+
+If you prefer manual setup:
+
+```bash
+# Terminal 1: Start dev server
+cd apps/web
+pnpm dev
+
+# Terminal 2: Start ngrok
+cd apps/web
+pnpm ngrok
+# Or: ngrok start --config=ngrok.yml minipay
+```
+
+Get your URL from http://localhost:4040 (ngrok dashboard)
+
+### Documentation
+
+For detailed instructions, troubleshooting, and configuration, see:
+- **[MINIPAY_TESTING.md](apps/web/MINIPAY_TESTING.md)** - Complete testing guide
+
+### Features Tested
+
+- ✅ Wallet auto-connection in MiniPay
+- ✅ cUSD transactions (entry fees)
+- ✅ Gameplay and scoring
+- ✅ Leaderboard updates
+- ✅ Round management
+
+---
+
 ## 🚢 Deployment
 
 ### Vercel Deployment (Recommended)
@@ -539,6 +614,8 @@ pnpm clean            # Clean all build artifacts
 ```bash
 cd apps/web
 pnpm dev              # Start Next.js dev server (port 3000)
+pnpm dev:minipay      # Start dev server for MiniPay testing
+pnpm ngrok            # Start ngrok tunnel for MiniPay
 pnpm build            # Build for production
 pnpm start            # Start production server
 pnpm lint             # Run ESLint

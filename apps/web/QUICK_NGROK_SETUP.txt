@@ -1,0 +1,11 @@
+🚀 QUICK NGROK SETUP PROMPT - COPY & PASTE TO AI ASSISTANT
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Set up ngrok for my Next.js app testing. Check if ngrok is installed (install via npm if not), configure authtoken globally if needed, detect the dev server port (check both 3000 and 3001), create/update ngrok.yml config file in apps/web/, start ngrok tunnel pointing to the correct port, and display the public HTTPS URL for MiniPay testing. Also provide brief instructions on how to use the URL.
+
+My ngrok authtoken: 36DI0Y8JIKiDQ0DFy6AVMuZ8Wma_bdkp5fwL187qQnmfMLF4
+Project location: /home/soliu/hacker/color-match-rush/apps/web
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
