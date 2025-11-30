@@ -140,7 +140,7 @@ function PlayPageContent() {
               <p className="text-2xl font-black text-[#35d07f] mb-2">{score}</p>
               <p className="text-sm text-gray-400">Your Score</p>
             </div>
-            <p className="text-sm text-gray-500 mb-8">
+            <p className="text-sm text-gray-400 mb-8">
               Wait for the round to end and join the next round to play again!
             </p>
             <motion.button
@@ -165,7 +165,7 @@ function PlayPageContent() {
   }
 
   return (
-    <div className="flex flex-col h-screen w-full pb-20 relative">
+    <div className="flex flex-col h-screen w-full bg-[#0f172a] pb-20 relative">
       <WalletButton />
       
       <div className="flex-1 flex flex-col items-center justify-center px-6">
@@ -179,14 +179,14 @@ function PlayPageContent() {
             <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#35d07f] to-[#fbcc5c] flex items-center justify-center mx-auto mb-6 shadow-lg">
               <span className="text-6xl">🎮</span>
             </div>
-            <h1 className="text-4xl font-black text-[#1a1a1a] mb-4">
+            <h1 className="text-4xl font-black text-white mb-4">
               Ready to Play?
             </h1>
             <p className="text-lg text-gray-200 mb-4">
               You'll have 30 seconds to match as many colors as possible!
             </p>
             <div className="bg-[#1e293b] rounded-2xl p-3 mb-4 border border-[#334155]">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-300">
                 One play per round • Your score will be saved automatically
               </p>
             </div>
@@ -197,7 +197,7 @@ function PlayPageContent() {
               <div className="flex items-center gap-3">
                 <span className="text-2xl">⏱️</span>
                 <div>
-                  <p className="font-bold text-[#1a1a1a]">30 Seconds</p>
+                  <p className="font-bold text-white">30 Seconds</p>
                   <p className="text-sm text-gray-400">Time limit per game</p>
                 </div>
               </div>
@@ -207,7 +207,7 @@ function PlayPageContent() {
               <div className="flex items-center gap-3">
                 <span className="text-2xl">✅</span>
                 <div>
-                  <p className="font-bold text-[#1a1a1a]">+1 Point</p>
+                  <p className="font-bold text-white">+1 Point</p>
                   <p className="text-sm text-gray-400">For each correct answer</p>
                 </div>
               </div>
@@ -217,7 +217,7 @@ function PlayPageContent() {
               <div className="flex items-center gap-3">
                 <span className="text-2xl">❌</span>
                 <div>
-                  <p className="font-bold text-[#1a1a1a]">-1 Point</p>
+                  <p className="font-bold text-white">-1 Point</p>
                   <p className="text-sm text-gray-400">For each wrong answer</p>
                 </div>
               </div>

@@ -45,7 +45,7 @@ function LeaderboardPageContent() {
   }, [])
 
   return (
-    <div className="flex flex-col h-screen w-full pb-20 relative">
+    <div className="flex flex-col h-screen w-full bg-[#0f172a] pb-20 relative">
       <WalletButton />
       <div className="sticky top-0 bg-[#0f172a] z-10 px-6 pt-20 pb-4">
         <motion.h1
@@ -65,7 +65,7 @@ function LeaderboardPageContent() {
         ) : !Array.isArray(leaderboard) || leaderboard.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-32">
             <p className="text-lg text-white">No scores yet</p>
-            <p className="text-sm text-gray-500">Be the first to submit!</p>
+            <p className="text-sm text-gray-400">Be the first to submit!</p>
           </div>
         ) : (
           <div className="space-y-2">
