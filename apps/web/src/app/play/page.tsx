@@ -17,6 +17,7 @@ function PlayPageContent() {
   const [hasPlayed, setHasPlayed] = useState(false)
   const [userScore, setUserScore] = useState(0)
   const [loading, setLoading] = useState(true)
+  const [resetting, setResetting] = useState(false)
   const alreadyPlayed = searchParams.get("alreadyPlayed") === "true"
   const existingScore = Number.parseInt(searchParams.get("score") || "0")
 
@@ -52,6 +53,29 @@ function PlayPageContent() {
       console.error("Failed to fetch round data:", error)
     } finally {
       setLoading(false)
+    }
+  }
+
+  const handleResetPlay = async () => {
+    if (!address) return
+    
+    setResetting(true)
+    try {
+      const response = await fetch(`/api/reset-play?address=${address}`)
+      const data = await response.json()
+      
+      if (response.ok) {
+        // Refresh the page data
+        await fetchRoundData()
+        alert("✅ Play status reset! You can now play again.")
+      } else {
+        alert(data.error || "Failed to reset play status")
+      }
+    } catch (error) {
+      console.error("Reset play error:", error)
+      alert("Failed to reset play status")
+    } finally {
+      setResetting(false)
     }
   }
 
@@ -149,6 +173,14 @@ function PlayPageContent() {
               className="w-full py-4 px-6 bg-[#35d07f] text-[#1a1a1a] font-bold rounded-2xl transition-all hover:opacity-90 mb-3"
             >
               View Leaderboard
+            </motion.button>
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={handleResetPlay}
+              disabled={resetting}
+              className="w-full py-4 px-6 bg-yellow-500 text-white font-bold rounded-2xl transition-all hover:opacity-90 mb-3 disabled:opacity-50"
+            >
+              {resetting ? "Resetting..." : "🔄 Reset Play (Demo)"}
             </motion.button>
             <motion.button
               whileTap={{ scale: 0.95 }}
